@@ -1,0 +1,50 @@
+{
+  "folders": [
+    {
+      "name": "brighte-frontend-assessment",
+      "path": "."
+    },
+  ],
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.tabCompletion": "on",
+    "editor.tabFocusMode": false,
+    "editor.tabSize": 2,
+    "emmet.triggerExpansionOnTab": true,
+    "eslint.nodePath": ".yarn/sdks",
+    "github.copilot.editor.enableAutoCompletions": true,
+    "npm.packageManager": "yarn",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "typescript.tsdk": "brighte-frontend-assessment/node_modules/typescript/lib",
+    "github.copilot.enable": {
+      "*": true
+    },
+    "editor.quickSuggestions": {
+      "strings": "on"
+    },
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll.eslint": "explicit"
+    },
+    "search.exclude": {
+      "**/.yarn": true,
+      "**/.pnp.*": true
+    },
+    "[json,scss,css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true,
+      "editor.tabCompletion": "on"
+    },
+    "[javascript,typescriptreact,typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.insertSpaces": true,
+      "editor.tabCompletion": "on",
+      "editor.tabSize": 2
+    },
+    "[prisma]": {
+      "editor.defaultFormatter": "Prisma.prisma"
+    }
+  }
+}
