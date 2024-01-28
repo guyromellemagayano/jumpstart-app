@@ -111,6 +111,7 @@ coverage/
 
 # Next.js
 .next/
+next.config.mjs
 
 # Production
 build/
