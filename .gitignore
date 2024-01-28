@@ -206,3 +206,6 @@ Thumbs.db
 # Cypress
 /cypress/screenshots
 /cypress/videos
+
+# Components
+!/components/atoms/Icon
