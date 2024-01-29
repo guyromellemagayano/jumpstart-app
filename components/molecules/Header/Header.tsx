@@ -4,9 +4,7 @@ import {
   TCommonClassNameProps
 } from '@/types/common'
 
-import { clsx } from 'clsx'
 import { HTMLAttributes } from 'react'
-import styles from './Header.module.css'
 
 export type THeaderProps = HTMLAttributes<HTMLElement> &
   TCommonClassNameProps &
@@ -26,7 +24,7 @@ const Header = ({
   ...rest
 }: THeaderProps): JSX.Element => {
   return (
-    <header className={clsx(styles.header, className)} {...rest}>
+    <header className={className} {...rest}>
       {children}
     </header>
   )
