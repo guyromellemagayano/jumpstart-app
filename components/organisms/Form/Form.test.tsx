@@ -16,7 +16,7 @@ describe('<Form />', () => {
     fireEvent.change(screen.getByRole('textbox'), {
       target: { value: 'testValue' }
     })
-    fireEvent.submit(screen.getByTestId('form-element'))
+    fireEvent.submit(screen.getByTestId('form-container'))
 
     expect(mockOnSubmit).toHaveBeenCalled()
   })
