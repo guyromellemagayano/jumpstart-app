@@ -3,7 +3,7 @@
     {
       "name": "brighte-frontend-assessment",
       "path": "."
-    },
+    }
   ],
   "settings": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
