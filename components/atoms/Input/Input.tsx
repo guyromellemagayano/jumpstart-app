@@ -1,11 +1,8 @@
 import { InputHTMLAttributes, useEffect } from 'react'
 
-import { clsx } from 'clsx'
 import { RegisterOptions } from 'react-hook-form'
 
 import { TCommonAdditionalProps } from '@/types/common'
-
-import styles from './Input.module.css'
 
 export type TInputProps = InputHTMLAttributes<HTMLInputElement> &
   TCommonAdditionalProps & {
@@ -50,14 +47,14 @@ const Input = ({
     <>
       {isFileType ? (
         <input
-          className={clsx(styles.input, className)}
+          className={className}
           aria-invalid={errors[name] ? 'true' : 'false'}
           onChange={handleFileChange}
           {...rest}
         />
       ) : (
         <input
-          className={clsx(styles.input, className)}
+          className={className}
           aria-invalid={errors[name] ? 'true' : 'false'}
           {...register(name, { ...rest })}
           {...rest}
