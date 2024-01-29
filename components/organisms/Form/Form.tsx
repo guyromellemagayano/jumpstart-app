@@ -27,6 +27,7 @@ const Form = ({
     <form
       className={clsx(styles.form, className)}
       onSubmit={onSubmit}
+      data-testid="form-element"
       {...rest}
     >
       {children}
