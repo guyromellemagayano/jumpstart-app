@@ -1,4 +1,4 @@
-import { FormHTMLAttributes } from 'react'
+import { FormEvent, FormHTMLAttributes } from 'react'
 
 import { clsx } from 'clsx'
 
@@ -23,10 +23,15 @@ const Form = ({
   onSubmit,
   ...rest
 }: TFormProps): JSX.Element => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
+    event.preventDefault()
+    onSubmit && onSubmit(event)
+  }
+
   return (
     <form
       className={clsx(styles.form, className)}
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit}
       data-testid="form-element"
       {...rest}
     >

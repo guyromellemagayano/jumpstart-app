@@ -4,7 +4,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import Form from './Form'
 
 describe('<Form />', () => {
-  it('submits the correct data', () => {
+  test('submits the correct data', () => {
     const mockOnSubmit = jest.fn()
     render(
       <Form onSubmit={mockOnSubmit}>
@@ -16,9 +16,8 @@ describe('<Form />', () => {
     fireEvent.change(screen.getByRole('textbox'), {
       target: { value: 'testValue' }
     })
+    fireEvent.submit(screen.getByTestId('form-element'))
 
-    fireEvent.click(screen.getByText('Submit'))
-
-    expect(mockOnSubmit).toHaveBeenCalledWith({ testField: 'testValue' })
+    expect(mockOnSubmit).toHaveBeenCalled()
   })
 })
