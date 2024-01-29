@@ -32,7 +32,7 @@ const Form = ({
     <form
       className={clsx(styles.form, className)}
       onSubmit={handleSubmit}
-      data-testid="form-element"
+      data-testid="form-container"
       {...rest}
     >
       {children}
