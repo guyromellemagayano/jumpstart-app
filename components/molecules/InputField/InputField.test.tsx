@@ -4,10 +4,15 @@ import { render, screen } from '@testing-library/react'
 import InputField from './InputField'
 
 describe('InputField', () => {
+  const mockRegister = jest.fn()
+  const mockErrors = {}
+
   const inputProps = {
     name: 'testInput',
     type: 'text',
-    placeholder: 'Enter text'
+    placeholder: 'Enter text',
+    register: mockRegister,
+    errors: mockErrors
   }
   const labelProps = {
     htmlFor: 'testInput'

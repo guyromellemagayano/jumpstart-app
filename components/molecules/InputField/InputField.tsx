@@ -33,7 +33,11 @@ const InputField = ({
   ...rest
 }: TInputFieldProps): JSX.Element => {
   return (
-    <div className={clsx(styles.inputField, className)} {...rest}>
+    <div
+      className={clsx(styles.inputField, className)}
+      data-testid="input-field-container"
+      {...rest}
+    >
       {labelProps && labelContent && (
         <Label {...labelProps}>{labelContent}</Label>
       )}
