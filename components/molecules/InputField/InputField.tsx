@@ -1,13 +1,9 @@
 import { ReactNode } from 'react'
 
-import clsx from 'clsx'
-
 import Input, { TInputProps } from '@/components/atoms/Input/Input'
 import Label, { TLabelProps } from '@/components/atoms/Label/Label'
 
 import { TCommonAdditionalProps, TCommonClassNameProps } from '@/types/common'
-
-import styles from './InputField.module.css'
 
 export type TInputFieldProps = TCommonClassNameProps &
   TCommonAdditionalProps & {
@@ -33,11 +29,7 @@ const InputField = ({
   ...rest
 }: TInputFieldProps): JSX.Element => {
   return (
-    <div
-      className={clsx(styles.inputField, className)}
-      data-testid="input-field-container"
-      {...rest}
-    >
+    <div className={className} data-testid="input-field-container" {...rest}>
       {labelProps && labelContent && (
         <Label {...labelProps}>{labelContent}</Label>
       )}
