@@ -1,12 +1,8 @@
-import { clsx } from 'clsx'
-
 import {
   TCommonAdditionalProps,
   TCommonChildrenProps,
   TCommonClassNameProps
 } from '@/types/common'
-
-import styles from './Heading.module.css'
 
 export type THeadingProps = TCommonClassNameProps &
   TCommonChildrenProps &
@@ -31,7 +27,7 @@ const Heading = ({
   const Tag = `h${level}` as keyof JSX.IntrinsicElements
 
   return (
-    <Tag className={clsx(styles.heading, className)} {...rest}>
+    <Tag className={className} {...rest}>
       {children}
     </Tag>
   )
