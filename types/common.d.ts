@@ -7,3 +7,7 @@ export type TCommonAdditionalProps = {
 export type TCommonChildrenProps = {
   children?: ReactNode
 }
+
+export type TCommonClassNameProps = {
+  className?: string
+}
