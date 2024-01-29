@@ -1,10 +1,6 @@
 import { HTMLAttributes } from 'react'
 
-import { clsx } from 'clsx'
-
 import { TCommonAdditionalProps, TCommonChildrenProps } from '@/types/common'
-
-import styles from './PageLayout.module.css'
 
 export type TPageLayoutProps = HTMLAttributes<HTMLElement> &
   TCommonChildrenProps &
@@ -23,7 +19,7 @@ const PageLayout = ({
   ...rest
 }: TPageLayoutProps): JSX.Element => {
   return (
-    <main className={clsx(styles.pageLayout, className)} {...rest}>
+    <main className={className} {...rest}>
       {children}
     </main>
   )
