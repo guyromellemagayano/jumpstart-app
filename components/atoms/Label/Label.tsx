@@ -1,10 +1,6 @@
 import { LabelHTMLAttributes } from 'react'
 
-import { clsx } from 'clsx'
-
 import { TCommonAdditionalProps, TCommonChildrenProps } from '@/types/common'
-
-import styles from './Label.module.css'
 
 export type TLabelProps = LabelHTMLAttributes<HTMLLabelElement> &
   TCommonChildrenProps &
@@ -19,7 +15,7 @@ export type TLabelProps = LabelHTMLAttributes<HTMLLabelElement> &
  */
 const Label = ({ className, children, ...rest }: TLabelProps): JSX.Element => {
   return (
-    <label className={clsx(styles.label, className)} {...rest}>
+    <label className={className} {...rest}>
       {children}
     </label>
   )
