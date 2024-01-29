@@ -103,20 +103,15 @@
     }
   },
   "lint-staged": {
-    "/**/*.{ts,tsx}": [
-      "npm run test -- --findRelatedTests"
-    ],
-    "*.{ts,tsx}": [
+    "**/*.ts?(x)": [
       "eslint --fix",
-      "prettier --write --ignore-unknown"
+      "prettier --write"
     ],
     "*.js": [
       "eslint --fix",
-      "prettier --write --ignore-unknown"
+      "prettier --write"
     ],
-    "*.{json,css,md}": [
-      "prettier --write --ignore-unknown"
-    ]
+    "*.{json,css,md}": "prettier --write"
   },
   "engines": {
     "node": ">=20.9.0"
