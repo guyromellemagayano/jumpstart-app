@@ -1,10 +1,7 @@
-import {
-  TCommonAdditionalProps,
-  TCommonChildrenProps,
-  TCommonClassNameProps
-} from '@/types/common'
+import { TCommonAdditionalProps, TCommonChildrenProps } from '@/types/common'
+import { ElementType, HTMLAttributes } from 'react'
 
-export type THeadingProps = TCommonClassNameProps &
+export type THeadingProps = HTMLAttributes<HTMLHeadingElement> &
   TCommonChildrenProps &
   TCommonAdditionalProps & {
     level: 1 | 2 | 3 | 4 | 5 | 6
@@ -24,7 +21,7 @@ const Heading = ({
   className,
   ...rest
 }: THeadingProps): JSX.Element => {
-  const Tag = `h${level}` as keyof JSX.IntrinsicElements
+  const Tag: ElementType = `h${level}`
 
   return (
     <Tag className={className} {...rest}>
