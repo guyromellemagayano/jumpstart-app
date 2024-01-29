@@ -1,10 +1,6 @@
 import { HTMLAttributes } from 'react'
 
-import { clsx } from 'clsx'
-
 import { TCommonAdditionalProps, TCommonChildrenProps } from '@/types/common'
-
-import styles from './ListItem.module.css'
 
 export type TListItemProps = HTMLAttributes<HTMLLIElement> &
   TCommonChildrenProps &
@@ -23,7 +19,7 @@ const ListItem = ({
   ...rest
 }: TListItemProps): JSX.Element => {
   return (
-    <li className={clsx(styles.listItem, className)} {...rest}>
+    <li className={className} {...rest}>
       {children}
     </li>
   )
