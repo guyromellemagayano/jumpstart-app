@@ -1,2 +1,11 @@
-.referralPage {
+.pageLayout {
+  @apply lg:flex lg:items-center lg:justify-center w-full h-screen;
+}
+
+.headerHeading {
+  @apply text-2xl font-bold mb-6;
+}
+
+.sectionArticleFormHeading {
+  @apply text-2xl font-bold mb-6;
 }

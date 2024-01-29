@@ -3,13 +3,20 @@ import { Fragment } from 'react'
 import { useForm } from 'react-hook-form'
 
 import Heading from '@/components/atoms/Heading/Heading'
+import Header from '@/components/molecules/Header/Header'
 import InputField from '@/components/molecules/InputField/InputField'
+import Article from '@/components/organisms/Article/Article'
 import Form from '@/components/organisms/Form/Form'
+import Section from '@/components/organisms/Section/Section'
 import PageLayout from '@/components/templates/PageLayout/PageLayout'
 
-import { TReferralPageFormData, referralPageData } from '@/data/referral-page'
+import {
+  TReferralPageCommonLabelData,
+  TReferralPageFormData,
+  referralPageData
+} from '@/data/referral-page'
 
-import styles from './ReferralPage.module.css'
+import referralPageStyles from './ReferralPage.module.css'
 
 export type TFormValues = Record<string, unknown>
 
@@ -25,47 +32,56 @@ const PageContent = (): JSX.Element => {
     formState: { errors }
   } = useForm<TFormValues>()
 
+  const headerData: TReferralPageCommonLabelData = referralPageData.header || {}
   const formData: TReferralPageFormData[] = referralPageData.form || []
   const onSubmit = (data: TFormValues) => console.log(data)
 
   return (
-    <section className={styles.referralPage}>
-      <Form onSubmit={handleSubmit(onSubmit)} noValidate>
-        {formData.map((data, dataIndex) => (
-          <Fragment key={dataIndex}>
-            {data.section && (
-              <Heading level={2} className={data.section.className}>
-                {data.section.label}
-              </Heading>
-            )}
+    <>
+      {headerData.title && (
+        <Header>
+          <Heading level={2} className={referralPageStyles.headerHeading}>
+            {headerData.title}
+          </Heading>
+        </Header>
+      )}
 
-            {data.fields?.map((field, fieldIndex) => {
-              const inputProps = {
-                ...field.input,
-                register,
-                errors,
-                setFocus
-              }
-
-              return (
-                <InputField
-                  key={fieldIndex}
-                  inputProps={inputProps}
-                  labelProps={field.label}
-                  labelContent={field.label?.text}
-                />
-              )
-            })}
-          </Fragment>
-        ))}
-      </Form>
-    </section>
+      <Section className="space-y-12">
+        <Article>
+          <Form onSubmit={handleSubmit(onSubmit)} noValidate>
+            {formData.map((data, dataIndex) => (
+              <Fragment key={dataIndex}>
+                {data.section && (
+                  <Heading
+                    level={2}
+                    className={referralPageStyles.sectionArticleFormHeading}
+                  >
+                    {data.section.title}
+                  </Heading>
+                )}
+                {data.fields?.map((field, fieldIndex) => (
+                  <InputField
+                    key={fieldIndex}
+                    inputProps={{ ...field.input, register, errors, setFocus }}
+                    labelProps={field.label}
+                    labelContent={field.label?.text}
+                  />
+                ))}
+              </Fragment>
+            ))}
+          </Form>
+        </Article>
+        <Article>
+          <h1>henlo</h1>
+        </Article>
+      </Section>
+    </>
   )
 }
 
 const ReferralPage = (): JSX.Element => {
   return (
-    <PageLayout>
+    <PageLayout className={referralPageStyles.pageLayout}>
       <PageContent />
     </PageLayout>
   )
