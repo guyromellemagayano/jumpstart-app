@@ -1,10 +1,6 @@
 import type { ButtonHTMLAttributes } from 'react'
 
-import { clsx } from 'clsx'
-
 import { TCommonAdditionalProps, TCommonChildrenProps } from '@/types/common'
-
-import styles from './Button.module.css'
 
 export type TButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   TCommonChildrenProps &
@@ -23,7 +19,7 @@ const Button = ({
   ...rest
 }: TButtonProps): JSX.Element => {
   return (
-    <button className={clsx(styles.button, className)} {...rest}>
+    <button className={className} {...rest}>
       {children}
     </button>
   )
