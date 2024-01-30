@@ -1,10 +1,8 @@
-import { clsx } from 'clsx'
+import { TReferralPageColumnsData } from '@/data/referral-page'
 
 import { TCommonAdditionalProps, TCommonClassNameProps } from '@/types/common'
 
-export type TTableColumn = {
-  header: string
-  accessor: string
+export type TTableColumn = TReferralPageColumnsData & {
   headerClassName?: string
 }
 
@@ -48,14 +46,7 @@ const Table = ({
       <thead className={theadClassName}>
         <tr className={headerRowClassName}>
           {columns.map((col, index) => (
-            <th
-              key={index}
-              scope="col"
-              className={clsx(
-                'py-3.5 pl-4 pr-3 text-left text-sm font-semibold',
-                col.headerClassName
-              )}
-            >
+            <th key={index} scope="col" className={col.headerClassName}>
               {col.header}
             </th>
           ))}
@@ -65,11 +56,8 @@ const Table = ({
         {data.map((row, rowIndex) => (
           <tr key={rowIndex} className={bodyRowClassName}>
             {columns.map((col, colIndex) => (
-              <td
-                key={colIndex}
-                className={clsx('px-3 py-4 text-sm', cellClassName)}
-              >
-                {row[col.accessor]}
+              <td key={colIndex} className={cellClassName}>
+                {col.cellRender ? col.cellRender(row) : row[col.accessor]}
               </td>
             ))}
           </tr>
