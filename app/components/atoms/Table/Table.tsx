@@ -1,4 +1,4 @@
-import { TReferralPageColumnsData } from '@/data/referral-page'
+import { TReferralPageColumnsData } from '@/server/data/referral-page'
 
 import { TCommonAdditionalProps, TCommonClassNameProps } from '@/types/common'
 

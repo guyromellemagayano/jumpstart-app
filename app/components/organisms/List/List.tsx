@@ -2,7 +2,7 @@ import { HTMLAttributes, ReactNode, useMemo } from 'react'
 
 import { clsx } from 'clsx'
 
-import ListItem from '@/components/molecules/ListItem/ListItem'
+import ListItem from '@/app/components/molecules/ListItem/ListItem'
 
 import { TCommonAdditionalProps, TCommonClassNameProps } from '@/types/common'
 

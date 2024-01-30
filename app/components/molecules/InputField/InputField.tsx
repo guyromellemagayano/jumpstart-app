@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
-import Input, { TInputProps } from '@/components/atoms/Input/Input'
-import Label, { TLabelProps } from '@/components/atoms/Label/Label'
+import Input, { TInputProps } from '@/app/components/atoms/Input/Input'
+import Label, { TLabelProps } from '@/app/components/atoms/Label/Label'
 
 import { TCommonAdditionalProps, TCommonClassNameProps } from '@/types/common'
 

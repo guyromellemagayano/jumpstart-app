@@ -1,4 +1,4 @@
-import ReferralPage from '@/components/pages/ReferralPage/ReferralPage'
+import ReferralPage from '@/app/components/pages/ReferralPage/ReferralPage'
 
 /**
  * Renders the home page.
