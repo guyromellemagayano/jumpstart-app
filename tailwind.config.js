@@ -6,9 +6,8 @@ module.exports = {
   content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
   theme: {
     colors: {
-      green: {
-        DEFAULT: '#4CAF50'
-      }
+      white: '#FFFFFF',
+      green: '#4CAF50'
     },
     extend: {}
   },

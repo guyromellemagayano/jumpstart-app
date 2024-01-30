@@ -1,8 +1,27 @@
+import Button from '@/components/atoms/Button/Button'
 import { TInputProps } from '@/components/atoms/Input/Input'
 import { TLabelProps } from '@/components/atoms/Label/Label'
 
+import { TCommonClassNameProps } from '@/types/common'
+
+export type TReferralPageCommonData = TCommonClassNameProps & {
+  title: string
+}
+
 export type TReferralPageData = {
+  header: TReferralPageHeaderData
+  columns: TReferralPageColumnsData[]
   form: TReferralPageFormData[]
+}
+
+export type TReferralPageHeaderData = {
+  title: string
+}
+
+export type TReferralPageColumnsData = {
+  header: string
+  accessor: string
+  cellRender?: (data: any) => JSX.Element
 }
 
 export type TReferralPageFormData = {
@@ -10,10 +29,7 @@ export type TReferralPageFormData = {
   fields: TReferralPageFormFieldsData[]
 }
 
-export type TReferralPageFormSectionData = {
-  label: string
-  className: string
-}
+export type TReferralPageFormSectionData = TReferralPageCommonData
 
 export type TReferralPageFormFieldsData = {
   label?: TLabelProps
@@ -21,11 +37,31 @@ export type TReferralPageFormFieldsData = {
 }
 
 export const referralPageData: TReferralPageData = {
+  header: {
+    title: 'Referral Builder'
+  },
+  columns: [
+    { header: 'Given Name', accessor: 'givenName' },
+    { header: 'Surname', accessor: 'surname' },
+    { header: 'Email', accessor: 'email' },
+    { header: 'Phone', accessor: 'phone' },
+    {
+      header: 'Actions',
+      accessor: 'actions',
+      cellRender(data) {
+        return (
+          <div>
+            <Button onClick={() => console.log(data)}>Edit</Button>
+            <Button onClick={() => console.log(data)}>Delete</Button>
+          </div>
+        )
+      }
+    }
+  ],
   form: [
     {
       section: {
-        label: 'Personal Details',
-        className: ''
+        title: 'Personal Details'
       },
       fields: [
         {
@@ -85,7 +121,7 @@ export const referralPageData: TReferralPageData = {
     },
     {
       section: {
-        label: 'Address',
+        title: 'Address',
         className: ''
       },
       fields: [
